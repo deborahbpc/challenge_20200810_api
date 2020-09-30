@@ -35,3 +35,7 @@
 yarn-debug.log*
 .yarn-integrity
 .env*
+
+challenge_api_development
+challenge_api_test
+challenge_api_production
