@@ -6,7 +6,7 @@ ruby '2.6.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
+gem 'mysql2', '~> 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -28,9 +28,34 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# A simple HTTP and REST client for Ruby
+gem 'rest-client', '~> 2.1'
+
+# Used to easily generate fake data
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+# Client library for easily using the Cloudinary service
+gem 'cloudinary', '~> 1.18.0'
+# Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website
+gem 'autoprefixer-rails'
+# Font-Awesome SASS gem for use in Ruby projects
+gem 'font-awesome-sass'
+# Forms made easy!
+gem 'simple_form'
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+# Use render in your Rails controllers and handle the response with Turbolinks.
+gem 'turbolinks_render'
+# Object oriented authorization for Rails applications
+gem 'pundit'
+
 group :development, :test do
+  # Used to load environment variables from .env into ENV in development.
+  gem 'dotenv-rails'
+  gem 'pry-byebug'
+  gem 'pry-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  
 end
 
 group :development do
