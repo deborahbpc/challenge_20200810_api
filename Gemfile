@@ -49,6 +49,8 @@ gem 'turbolinks_render'
 gem 'pundit'
 # Adding API key
 gem 'simple_token_authentication'
+# Bootstrap 4 ruby gem for Ruby on Rails
+gem 'bootstrap', '~> 5.0.0.alpha1'
 
 group :development, :test do
   # Used to load environment variables from .env into ENV in development.
