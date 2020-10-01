@@ -47,6 +47,8 @@ gem 'devise'
 gem 'turbolinks_render'
 # Object oriented authorization for Rails applications
 gem 'pundit'
+# Adding API key
+gem 'simple_token_authentication'
 
 group :development, :test do
   # Used to load environment variables from .env into ENV in development.
