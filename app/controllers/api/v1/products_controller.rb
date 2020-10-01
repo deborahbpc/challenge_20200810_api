@@ -1,10 +1,10 @@
 class Api::V1::ProductsController < Api::V1::BaseController
-  acts_as_token_authentication_handler_for User, except: [ :index, :show, :home ]
-  skip_before_action :authenticate_user!, only: [ :index, :show, :home ]
+  acts_as_token_authentication_handler_for User, except: [ :challenge ]
   before_action :set_product, only: [ :show, :update, :destroy ]
 
-  def home
-    render status: 200, json: @controller.to_json
+  def challenge
+    skip_authorization
+    render(json: { message: "Ruby on Rails Challenge 20200810" }, status: 200)
   end
 
   def index
@@ -16,7 +16,6 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def create
     @product = Product.new(product_params)
-    @product.user = current_user
     authorize @product
     if @product.save
       render :show, status: :created
@@ -27,7 +26,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def update
     if @product.update(product_params)
-      redirect_to :show
+      render :show
     else
       render_error
     end
@@ -35,8 +34,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def destroy
     @product.destroy
-    # head :no_content
-    render json: { message: "Produto apagado com sucesso." }, status: :destroyed
+    head :no_content
   end
 
   private
@@ -47,7 +45,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
   
   def product_params
-    params.require(:product).permit(:title, :type_of_product, :description, :price, :rating, :photo)
+    params.require(:product).permit(:title, :type, :description, :price, :rating)
   end
 
   def render_error

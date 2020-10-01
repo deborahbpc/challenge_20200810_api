@@ -6,19 +6,25 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-    user.authentication_token.present?
+    authenticated?
   end
 
   def create?
-    user.authentication_token.present?
+    authenticated?
   end
 
   def update?
-    user.authentication_token.present?
+    authenticated?
   end
 
   def destroy?
-    user.authentication_token.present?
+    authenticated?
   end
 
+
+  private
+
+  def authenticated?
+    user.authentication_token.present?
+  end
 end
