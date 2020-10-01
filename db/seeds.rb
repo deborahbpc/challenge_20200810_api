@@ -4,6 +4,7 @@ if Rails.env.development?
     puts "Destroying DB..."
     
     Product.destroy_all
+    User.destroy_all
 
     puts "Done!"
 end
@@ -21,3 +22,12 @@ sleep(1)
 end
 
 puts "Products created!"
+
+puts "Creating user..."
+sleep(1)
+User.create!(
+    email: "teste@teste.com",
+    password: "123123"
+)
+
+puts "User created!"
