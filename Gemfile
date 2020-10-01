@@ -30,7 +30,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # A simple HTTP and REST client for Ruby
 gem 'rest-client', '~> 2.1'
-
 # Used to easily generate fake data
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Client library for easily using the Cloudinary service
