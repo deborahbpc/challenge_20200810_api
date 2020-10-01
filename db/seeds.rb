@@ -13,7 +13,7 @@ sleep(1)
 10.times do
     Product.create!(
         title: Faker::Food.fruits,
-        type_of_product: "fruit",
+        type: "fruit",
         price: (Faker::Commerce.price * 100).to_i,
         rating: rand(1..5),
         description: Faker::Food.description
