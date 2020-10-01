@@ -1,7 +1,11 @@
-class Api::V1::ProductsController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :index ]
-  skip_before_action :authenticate_user!, only: [ :index ]
+class Api::V1::ProductsController < Api::V1::BaseController
+  acts_as_token_authentication_handler_for User, except: [ :index, :show, :home ]
+  skip_before_action :authenticate_user!, only: [ :index, :show, :home ]
   before_action :set_product, only: [ :show, :update, :destroy ]
+
+  def home
+    render status: 200, json: @controller.to_json
+  end
 
   def index
     @products = policy_scope(Product)
