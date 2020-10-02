@@ -31,7 +31,7 @@ puts "Creating user..."
 sleep(1)
 User.create!(
     email: "teste@teste.com",
-    password: "123123"
+    password: ENV['SEED_PASSWORD']
 )
 
 puts "User created!"

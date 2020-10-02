@@ -1,0 +1,11 @@
+<div class="container d-flex justify-content-center">
+  <%= simple_form_for @product do |f| %>
+    <%= f.input :title %>
+    <%= f.input :type %>
+    <%= f.input :description %>
+    <%= f.input :rating %>
+    <%= f.input :price %>
+    <%= f.input :photo %>
+    <%= f.button :submit, "Editar", class: 'd-flex justify-content-center form-actions pink-btn justify-content-center align-center-btn mb-3 w-100' %>
+  <% end %>
+</div>

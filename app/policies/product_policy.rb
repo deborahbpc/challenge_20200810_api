@@ -6,19 +6,19 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-    authenticated?
+    user && authenticated?
   end
 
   def create?
-    authenticated?
+    user && authenticated?
   end
 
   def update?
-    authenticated?
+    user && authenticated?
   end
 
   def destroy?
-    authenticated?
+    user && authenticated?
   end
 
 

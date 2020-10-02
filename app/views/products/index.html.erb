@@ -2,3 +2,37 @@
 <p>HOME</p>
 <p>LOREM IPSUM</p>
 <p>simple form json</p>
+
+<div class="container d-flex justify-content-center">
+  <table>
+    <tr>
+      <th text-align="center">Title</th>
+      <th text-align="center">Type</th>
+      <th text-align="center">Rating</th>
+      <th text-align="center">Price</th>
+      <th text-align="center">Created</th>
+      <% if current_user %>
+        <th text-align="center">Action</th>
+      <% end %>
+    </tr>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.title, product_path(product) %></td>
+        <td><%= product.type %></td>
+        <td><%= product.rating %></td>
+        <td><%= product.price.to_f / 100  %></td>
+        <td><%= product.created_at %></td>
+        <% if current_user %>
+          <td>
+            <%= link_to edit_product_path(product), data: { confirm: 'Are you sure?' } do %>
+              <i class="far fa-edit"></i> Edit 
+            <% end %>
+            <%= link_to product_path(product), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="far fa-trash-alt"></i> Delete
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
