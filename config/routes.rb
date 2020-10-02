@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     end
   end
   
-  root to: 'pages#home'
+  resources :products
+  
+  root to: 'products#index'
 end

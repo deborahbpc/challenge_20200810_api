@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2020_10_01_002856) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "title"
-    t.string "type"
+    t.string "title", null: false
+    t.string "type", null: false
     t.text "description"
-    t.integer "price"
-    t.integer "rating"
+    t.integer "price", null: false
+    t.integer "rating", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
