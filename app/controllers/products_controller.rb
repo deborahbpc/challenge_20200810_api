@@ -19,6 +19,11 @@ class ProductsController < ApplicationController
     end
 
     def update
+      if @product.update(product_params)
+        redirect_to @product, notice: 'Successfully edited product'
+      else
+        render :edit
+      end
     end
 
     def destroy
