@@ -1,0 +1,12 @@
+<!---------- Logged ----------->
+<% if current_user %>
+  <div class="navbar-minimalist">
+    <%= link_to image_tag("logo/logo.png"), products_path %>
+  </div>
+<!---------- Not Logged ----------->
+<% else %>
+  <div class="navbar-minimalist">
+    <%= link_to image_tag("logo/logo.png"), products_path %>
+    <%=  %>
+  </div>
+<% end %>
