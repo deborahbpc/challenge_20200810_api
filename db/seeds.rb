@@ -17,7 +17,7 @@ sleep(1)
         title: Faker::Food.fruits,
         type: "fruit",
         price: Faker::Commerce.price,
-        rating: rand(1..5),
+        rating: rand(0..5),
         description: Faker::Food.description 
     )
     photo = URI.open('https://source.unsplash.com/600x400/?fruits')
