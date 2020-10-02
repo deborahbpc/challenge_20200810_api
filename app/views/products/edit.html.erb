@@ -6,6 +6,6 @@
     <%= f.input :rating %>
     <%= f.input :price %>
     <%= f.input :photo %>
-    <%= f.button :submit, "Editar", class: 'd-flex justify-content-center form-actions pink-btn justify-content-center align-center-btn mb-3 w-100' %>
+    <%= f.button :submit, "Editar", data: { confirm: 'Are you sure?' } %>
   <% end %>
 </div>

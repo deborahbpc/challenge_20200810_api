@@ -24,9 +24,10 @@
         <td><%= product.created_at %></td>
         <% if current_user %>
           <td>
-            <%= link_to edit_product_path(product), data: { confirm: 'Are you sure?' } do %>
+            <%= link_to edit_product_path(product) do %>
               <i class="far fa-edit"></i> Edit 
             <% end %>
+            <%= link_to 'Delete', product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %>
             <%= link_to product_path(product), data: { confirm: 'Are you sure?' }, method: :delete do %>
               <i class="far fa-trash-alt"></i> Delete
             <% end %>
