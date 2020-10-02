@@ -6,7 +6,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def show?
-    user && authenticated?
+    true
   end
 
   def create?
