@@ -12,6 +12,4 @@ Rails.application.routes.draw do
   
   resources :products
   
-  # Redirect to home when the route does not exist
-  get '*path' => redirect('/')
 end

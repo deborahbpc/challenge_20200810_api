@@ -4,18 +4,22 @@
     <div class="logo-nav">
       <%= link_to image_tag("logo/logo.png"), products_path %>
     </div>
+    <div>
+      <%= link_to destroy_user_session_path, method: :delete, class:"btn-langue colors dropdown-item" do %>
+        <i class="fas fa-sign-out-alt"></i> Logout
+      <% end %>
+    </div>
   </div>
 <!---------- Not Logged ----------->
 <% else %>
   <div class="navbar-minimalist">
-    <div classh="logo-nav">
+    <div class="logo-nav">
       <%= link_to image_tag("logo/logo.png"), products_path %>
     </div>
     <div>
-      <%= link_to new_user_session_path do %>
+      <%= link_to new_user_session_path, class:"btn-langue colors dropdown-item" do %>
         <span class="px-5 mx-5"><i class="far fa-user"></i> Sign in</span>
       <% end %>
     </div>
-    <%=  %>
   </div>
 <% end %>
