@@ -1,12 +1,21 @@
 <!---------- Logged ----------->
 <% if current_user %>
   <div class="navbar-minimalist">
-    <%= link_to image_tag("logo/logo.png"), products_path %>
+    <div class="logo-nav img-fluid">
+      <%= link_to image_tag("logo/logo.png"), products_path, class: 'img-fluid' %>
+    </div>
   </div>
 <!---------- Not Logged ----------->
 <% else %>
   <div class="navbar-minimalist">
-    <%= link_to image_tag("logo/logo.png"), products_path %>
+    <div classh="logo">
+      <%= link_to image_tag("logo/logo.png"), products_path, class: 'img-fluid' %>
+    </div>
+    <div>
+      <%= link_to new_user_session_path do %>
+        <span class="px-5 mx-5"><i class="far fa-user"></i> Sign in</span>
+      <% end %>
+    </div>
     <%=  %>
   </div>
 <% end %>
