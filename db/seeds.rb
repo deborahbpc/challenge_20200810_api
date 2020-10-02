@@ -12,11 +12,11 @@ end
 
 puts "Creating products..."
 sleep(1)
-5.times do
+10.times do
     product = Product.create!(
         title: Faker::Food.fruits,
         type: "fruit",
-        price: (Faker::Commerce.price * 100).to_i,
+        price: Faker::Commerce.price,
         rating: rand(1..5),
         description: Faker::Food.description 
     )

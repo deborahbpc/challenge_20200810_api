@@ -3,16 +3,25 @@ class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
     def index
-        @products = policy_scope(Product)
+      @products = policy_scope(Product)
+      @product = Product.new
     end
 
     def show
     end
 
-    def new
-    end
+    # def new
+    # end
 
     def create
+      @place = Place.new(place_params)
+      current_user.is_business ? @place.owner = current_user : @place.user = current_user
+      authorize @place
+      if @place.save
+        redirect_to @place, notice: 'Local adicionado com sucesso.'
+      else
+        render :new
+      end
     end
 
     def edit

@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_10_01_002856) do
     t.string "title", null: false
     t.string "type", null: false
     t.text "description"
-    t.integer "price", null: false
-    t.integer "rating", default: 0, null: false
+    t.integer "rating"
+    t.decimal "price", precision: 10, scale: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

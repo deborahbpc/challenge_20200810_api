@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :products
+  resources :products, except: :new
   
 end

@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: Fullstack Challenge 20200713
+  description: CRUD Products
+  version: '0.1'
+servers:
+  - url: https://challenge-20200810-v1.herokuapp.com/api/v1/
+paths:
+  /:
+    get:
+      summary: Home to API
+      responses:
+        '200':
+          description: Display Ruby on Rails Challenge 20200810
+          content: application/json
+  /products:
+    get:
+      summary: List products from database
+      responses:
+        '200':
+          description: An array of products
+          content: application/json
+    post:
+      summary: Add a new product to the DB
+      responses:
+        '201':
+          description: Created product
+          content: application/json 
+        '401':
+          description: Unauthorized
+          content: application/json
+  /products/{productId}:
+    get:
+      summary: Show one product defined by id
+      responses:
+        '200':
+          description: An array of products
+          content: application/json
+        '404':
+          description: Product not found
+    patch: 
+    delete: 
+      summary: List products from database
+      responses:
+        '200':
+          description: An array of products
+          content: application/json 
+        '204'
+          description: Server successfully processed the request
+          content: No content
+

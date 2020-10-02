@@ -1,10 +1,13 @@
 
 <div class="container mt-5">
-   <p>LOREM IPSUM</p>
+   <p>Import your JSON file to update this dashboard</p>
 </div>
 
 <div class="container d-flex justify-content-center">
-   <p>simple form json</p>
+  <%= simple_form_for @product, method: 'post' do |f| %>
+    <%= f.file %>
+    <%= f.submit 'Send' %>
+  <% end %>
 </div>
 
 
@@ -32,7 +35,8 @@
                 <td><%= product.type %></td>
                 <td><%= product.rating %></td>
                 <td><%= product.price.to_f / 100  %></td>
-                <td><%= product.created_at %></td>
+                
+                <td><%= product.created_at.strftime("%d/%m/%Y") %></td>
                 <% if current_user %>
                   <td>
                     <%= link_to edit_product_path(product) do %>
