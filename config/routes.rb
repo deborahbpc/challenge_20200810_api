@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :products, except: :destroy
+  resources :products
   
   # Redirect to home when the route does not exist
   get '*path' => redirect('/')
