@@ -1,15 +1,11 @@
 
 <div class="container mt-5">
-   <p>Import your JSON file to update this dashboard</p>
+   <p>Import a JSON file to update this dashboard</p>
 </div>
 
-<div class="container d-flex justify-content-center">
-  <%= simple_form_for @product, method: 'post' do |f| %>
-    <%= f.file %>
-    <%= f.submit 'Send' %>
-  <% end %>
+<div>
+  form
 </div>
-
 
 <div class="container d-flex justify-content-center align-content-center align-items-center mt-5 mb-5">
   <div class="side-info-box bg-light card-body shadow-sm r-border-card f-color">
@@ -34,7 +30,7 @@
                 <td><%= link_to product.title, product_path(product) %></td>
                 <td><%= product.type %></td>
                 <td><%= product.rating %></td>
-                <td><%= product.price.to_f / 100  %></td>
+                <td><%= product.price  %></td>
                 
                 <td><%= product.created_at.strftime("%d/%m/%Y") %></td>
                 <% if current_user %>

@@ -1,3 +1,4 @@
 json.array! @products do |product|
-  json.extract! product, :title, :type, :description, :rating, :price
+  json.extract! product, :title, :type, :description
+  json.extract! product, :price, :rating
 end
