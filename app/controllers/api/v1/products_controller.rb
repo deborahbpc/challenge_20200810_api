@@ -16,6 +16,8 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def create
     @product = Product.new(product_params)
+    photo = "~/app/assets/images/#{@product.filename}"
+    @product.attach(io: photo, filename: @product.filename, content_type: ['image/jpg', 'image/png'] ) 
     authorize @product
     if @product.save
       render :show, status: :created
@@ -45,7 +47,7 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
   
   def product_params
-    params.require(:product).permit(:title, :type, :description, :price, :rating)
+    params.require(:product).permit(:title, :type, :description, :price, :rating, :filename, :width, :height)
   end
 
   def render_error

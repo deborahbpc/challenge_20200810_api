@@ -5,7 +5,12 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :type, null: false
       t.text :description
       t.integer :rating
-      t.decimal :price, null: false, precision: 10, scale: 2
+      # t.decimal :price, null: false, precision: 10, scale: 2
+      t.float :price
+      t.string :filename
+      t.integer :height
+      t.integer :width
+
       t.timestamps
     end
   end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
+  root to: 'api/v1/products#challenge'
+  
   devise_for :users
-
   
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
@@ -9,7 +9,5 @@ Rails.application.routes.draw do
       get "/", to: "products#challenge"
     end
   end
-  
-  resources :products, except: :new
   
 end

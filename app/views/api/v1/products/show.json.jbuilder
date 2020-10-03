@@ -1,1 +1,1 @@
-json.extract! @product, :id, :title, :type, :rating, :price
+json.extract! @product, :title, :type, :description, :filename, :height, :width, :price, :rating
