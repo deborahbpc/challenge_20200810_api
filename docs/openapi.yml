@@ -20,32 +20,59 @@ paths:
         '200':
           description: An array of products
           content: application/json
+        '401':
+          description: Unauthorized
+          content: application/json
     post:
       summary: Add a new product to the DB
       responses:
         '201':
           description: Created product
           content: application/json 
+        '400':
+          description: Failed due to bad syntax
+          content: No content
         '401':
           description: Unauthorized
           content: application/json
+        '500':
+          description: "Internal server error"
+          content: HTML
   /products/{productId}:
     get:
       summary: Show one product defined by id
       responses:
         '200':
-          description: An array of products
+          description: Selected product
+          content: application/json
+        '401':
+          description: Unauthorized
           content: application/json
         '404':
           description: Product not found
-    patch: 
+          content: application/json
+    patch:
+      summary: Edit the selected product
+      responses:
+        '200':
+          description: Edited product
+          content: application/json
+        '400':
+          description: Failed due to bad syntax (no json)
+          content: No content
+        '401':
+          description: Unauthorized
+          content: application/json
+        '500':
+          description: "Internal server error"
+          content: HTML
     delete: 
       summary: List products from database
       responses:
-        '200':
-          description: An array of products
-          content: application/json 
         '204'
           description: Server successfully processed the request
           content: No content
+        '401':
+          description: Unauthorized
+          content: application/json
 
