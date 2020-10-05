@@ -16,8 +16,8 @@ class Api::V1::ProductsController < Api::V1::BaseController
 
   def create
     @product = Product.new(product_params)
-    photo = ".../app/assets/images/#{@product.filename}"
-    @product.attach(io: photo, filename: @product.filename, content_type: ['image/jpg', 'image/png'] ) 
+    photo = File.open(Rails.root.join("app", "assets", "images", "#{@product.filename}"))
+    @product.photo.attach(io: photo, filename: @product.filename, content_type: ['image/jpg', 'image/png'] )
     authorize @product
     if @product.save
       render :show, status: :created
