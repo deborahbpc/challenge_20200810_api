@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :challenge ]
   before_action :set_product, only: [ :show, :update, :destroy ]
-  # after_action :auth_origin, except: [:challenge]
+  after_action :auth_origin, except: [:challenge]
 
   def challenge
     skip_authorization
