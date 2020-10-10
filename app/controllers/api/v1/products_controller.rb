@@ -60,7 +60,8 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
 
   def auth_origin
-    response.set_header('Access-Control-Allow-Origin', 'https://challenge-20200810-front.herokuapp.com/')
+    # response.set_header('Access-Control-Allow-Origin', 'https://challenge-20200810-front.herokuapp.com/')
+    response.set_header('Access-Control-Allow-Origin', '*')
     response.set_header('X-Permitted-Cross-Domain-Policies', 'all')
   end
 end
