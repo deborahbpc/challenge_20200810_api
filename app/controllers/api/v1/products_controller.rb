@@ -35,8 +35,11 @@ class Api::V1::ProductsController < Api::V1::BaseController
   end
 
   def destroy
-    @product.destroy
-    head :no_content
+    if @product.destroy
+      head :no_content
+    else
+      render_error
+    end
   end
 
   private
@@ -53,5 +56,10 @@ class Api::V1::ProductsController < Api::V1::BaseController
   def render_error
     render json: { errors: @product.errors.full_messages },
       status: :unprocessable_entity
+  end
+
+  def auth_origin
+    response.set_header('Access-Control-Allow-Origin', 'https://challenge-20200810-front.herokuapp.com/')
+    response.set_header('X-Permitted-Cross-Domain-Policies', 'all')
   end
 end

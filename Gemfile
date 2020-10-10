@@ -52,6 +52,9 @@ gem 'simple_token_authentication'
 gem 'bootstrap', '~> 5.0.0.alpha1'
 gem 'jquery-rails'
 
+# Support for Cross-Origin Resource Sharing (CORS) for Rack compatible web applications
+gem 'rack-cors'
+
 group :development, :test do
   # Used to load environment variables from .env into ENV in development.
   gem 'dotenv-rails'
