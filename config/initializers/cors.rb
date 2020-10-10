@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors, debug: true, logger: (-> { Rails.logger }) do
   allow do
-    origins "https://challenge-20200810-front.herokuapp.com/"
+    origins "*"
 
     resource '*',
       :headers => :any,
