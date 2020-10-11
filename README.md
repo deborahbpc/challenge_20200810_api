@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby on Rails Challenge 20200810
 
-Things you may want to cover:
+### Backend
+API build to access given products database, with actions to load products list, add new product to database, edit or delete given product.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+An API key is needed to access all endpoints, except home (named challenge).
