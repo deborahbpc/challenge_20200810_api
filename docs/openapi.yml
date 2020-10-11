@@ -78,4 +78,7 @@ paths:
         '401':
           description: Unauthorized
           content: application/json
+        '404':
+          description: Product not found
+          content: application/json
 
