@@ -51,7 +51,7 @@ paths:
         '404':
           description: Product not found
           content: application/json
-    patch:
+    put:
       summary: Edit the selected product
       responses:
         '200':
@@ -62,6 +62,9 @@ paths:
           content: No content
         '401':
           description: Unauthorized
+          content: application/json
+        '422'
+          description: Unprocessable Entity
           content: application/json
         '500':
           description: "Internal server error"
