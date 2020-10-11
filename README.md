@@ -14,3 +14,6 @@ Available endpoints:
 * /api/v1/products/:productId -> GET: load selected product info
 * /api/v1/products/:productId -> PUT: edit selected product info
 * /api/v1/products/:productId -> DELETE: remove selected product 
+
+
+Products attributes: :title, :type, :description, :filename, :height, :width, :price, :rating
